@@ -1,0 +1,42 @@
+query bookDetails {
+  findBookById(id: "book-1") {
+    id
+    name
+    pageCount
+    author {
+      firstName
+      lastName
+    }
+  }
+}
+
+mutation {
+  addBook(
+    id: "book-4",
+    name: "GraphQL in Action",
+    pageCount: 300,
+    authorId: "author-1"
+  ) {
+    id
+    name
+    pageCount
+    author {
+      id
+      firstName
+      lastName
+    }
+  }
+}
+
+subscription {
+  bookAdded {
+    id
+    name
+    pageCount
+    author {
+      id
+      firstName
+      lastName
+    }
+  }
+}
